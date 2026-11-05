@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cozy Journal ☕</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="brand">☕ my little journal</div>
+    <div class="top-date" id="today"></div>
+</header>
+
+<main class="container">
+
+    <!-- WELCOME COVER -->
+    <section id="cover" class="cover">
+        <div class="cover-decoration">✿</div>
+        <p class="cover-small">A LITTLE SPACE JUST FOR ME</p>
+        <h1>My Cozy<br>Journal</h1>
+        <p class="cover-subtitle">
+            Little moments, big feelings & beautiful memories.
+        </p>
+        <div class="cover-flower">🌷</div>
+        <button class="primary-btn" onclick="openJournal()">
+            Open my journal →
+        </button>
+        <p class="cover-footer">made with love ♡</p>
+    </section>
+
+    <!-- JOURNAL BOOK -->
+    <section id="book" class="book-section hidden">
+
+        <div class="book-toolbar">
+            <button onclick="previousPage()" class="nav-btn">← Previous</button>
+            <span id="pageCounter">Page 1</span>
+            <button onclick="nextPage()" class="nav-btn">Next →</button>
+        </div>
+
+        <div class="book" id="bookPages">
+
+            <!-- LEFT PAGE -->
+            <article class="paper left-page" id="leftPage">
+
+                <div id="profilePage" class="page-content">
+                    <span class="page-label">A LITTLE ABOUT ME</span>
+                    <h2>Meet the writer ♡</h2>
+
+                    <div class="profile-flower">🌼</div>
+
+                    <label for="myName">My name</label>
+                    <input id="myName" placeholder="Your name">
+
+                    <label for="myBirthday">My birthday</label>
+                    <input id="myBirthday" type="date">
+
+                    <label for="myColor">Favourite colour</label>
+                    <input id="myColor" placeholder="e.g. Lavender">
+
+                    <label for="myHobby">My hobbies</label>
+                    <input id="myHobby" placeholder="Reading, music...">
+
+                    <label for="myDream">My little dream</label>
+                    <textarea id="myDream" placeholder="Something I dream about..."></textarea>
+
+                    <button class="save-btn" onclick="saveProfile()">
+                        Save my details ♡
+                    </button>
+                </div>
+
+                <div id="memoryPage" class="page-content hidden">
+                    <span class="page-label">LITTLE MEMORIES</span>
+                    <h2>My memories ♡</h2>
+                    <div id="memoryList"></div>
+                </div>
+
+            </article>
+
+            <!-- RIGHT PAGE -->
+            <article class="paper right-page" id="rightPage">
+
+                <div class="page-content" id="writingPage">
+                    <span class="page-label">DEAR DIARY...</span>
+
+                    <h2>Today's little story</h2>
+
+                    <div class="date-display" id="entryDate"></div>
+
+                    <input id="entryTitle"
+                           class="title-input"
+                           placeholder="Give today a title...">
+
+                    <textarea id="entryText"
+                              class="journal-text"
+                              placeholder="Dear diary,
+
+Today was...
+Write your thoughts here...
+
+What made me happy?
+What did I learn?
+What do I want to remember?"></textarea>
+
+                    <div class="sticker-area">
+                        <span>Add a little decoration ✿</span>
+                        <div class="stickers">
+                            <button onclick="addSticker('🌷')">🌷</button>
+                            <button onclick="addSticker('♡')">♡</button>
+                            <button onclick="addSticker('🦋')">🦋</button>
+                            <button onclick="addSticker('☁️')">☁️</button>
+                            <button onclick="addSticker('⭐')">⭐</button>
+                            <button onclick="addSticker('🍓')">🍓</button>
+                            <button onclick="addSticker('🌼')">🌼</button>
+                            <button onclick="addSticker('☕')">☕</button>
+                        </div>
+                    </div>
+
+                    <button class="save-btn" onclick="saveEntry()">
+                        Save this memory ♡
+                    </button>
+
+                    <p id="saveMessage" class="save-message"></p>
+                </div>
+
+                <div class="page-number" id="rightNumber">02</div>
+            </article>
+
+        </div>
+
+        <div class="book-bottom">
+            <button class="secondary-btn" onclick="showMemories()">
+                ♡ My memories
+            </button>
+            <button class="secondary-btn" onclick="showWriting()">
+                ✎ Write today
+            </button>
+            <button class="secondary-btn" onclick="backToCover()">
+                ← Close journal
+            </button>
+        </div>
+
+    </section>
+
+    <footer>
+        A little reminder: your story is beautiful. ♡
+    </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
